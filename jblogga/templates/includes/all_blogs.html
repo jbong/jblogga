@@ -1,6 +1,10 @@
 {% if blogs %}
+{% load utils %}
 
 {% for blog in blogs %}
+
+
+
     {% include "includes/blog_entry.html" %}
 {% endfor %}
 

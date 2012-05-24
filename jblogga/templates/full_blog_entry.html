@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load utils %}
 
 {% block body-content %}
 {% include "includes/blog_entry.html" %}
@@ -6,8 +7,10 @@
     <div class="blog-content">
     {% if user.nickname %}
 
-    <a href="/delete/{{ blog.key }}">Delete this entry</a>
-
+    {% get_is_editable blog %}
+    {%  if can_edit %}
+        <a href="/delete/{{ blog.key }}">Delete this entry</a>
+    {% endif %}
     {% endif %}
     </div>
 
