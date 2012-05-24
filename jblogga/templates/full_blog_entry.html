@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body-content %}
+{% include "includes/blog_entry.html" %}
+
+    <div class="blog-content">
+    {% if user.nickname %}
+
+    <a href="/delete/{{ blog.key }}">Delete this entry</a>
+
+    {% endif %}
+    </div>
+
+{% endblock %}

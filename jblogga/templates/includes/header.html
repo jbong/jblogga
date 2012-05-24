@@ -1,0 +1,21 @@
+<div id="header">
+    <h1><a href="/">jbong</a></h1>
+    <div id="auth-panel">
+    {% if user %}
+        {% if user.nickname %}
+            <p>{{ user.nickname }}
+            <a href="{{ auth_urls.out }}">sign out</a>
+            </p>
+            <p>
+                <a href="/add">+ add new</a>
+            </p>
+        {% else %}
+            <a href="{{ auth_urls.in }}">sign in</a>
+        {% endif %}
+
+    {%  else  %}
+        <a href="{{ auth_urls.in }}">sign in</a>
+    {% endif %}
+
+    </div>
+</div>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body-content %}
+
+    <div class="blog-delete blog-content ">
+    <form method="post">
+
+    <p>Delete this blog entry..are you sure?</p>
+
+    {{ form.key }}
+
+        <input type="submit" value="im a big boy..just do it already" class="button" />
+        <div class="clear"></div>
+
+    </form>
+    </div>
+    <br />
+
+    {% include "includes/blog_entry.html" %}
+
+{%  endblock %}

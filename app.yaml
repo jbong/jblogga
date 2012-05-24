@@ -1,0 +1,24 @@
+application: jblogga
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /static
+  static_dir: jblogga/static
+
+- url: /(add|delete).*
+  script: main.app
+  login: required
+  auth_fail_action: unauthorized
+
+- url: /.*
+  script: main.app
+
+libraries:
+- name: django
+  version: "1.3"
+
+inbound_services:
+- warmup

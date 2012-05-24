@@ -1,0 +1,18 @@
+<div class="blog-entry">
+    <h2>
+        <a href ="/blog/{{ blog.key }}">{{ blog.title }}</a>
+    </h2>
+
+    <div class="blog-content">
+
+    <p class="blog-meta">
+        <a href="/blog/{{ blog.key }}"></a>
+        {{ blog.created_at }} by {{ blog.author }}
+    </p>
+
+    <p>
+        {{ blog.body|safe }}
+    </p>
+
+    </div>
+</div>
