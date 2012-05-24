@@ -4,9 +4,6 @@ from google.appengine.api import users
 
 register = template.Library()
 
-def get_current_time():
-    return datetime.datetime.now().strftime("%Y-%M-%D")
-
 class EditableBlogNode(template.Node):
 
     def __init__(self, author):
